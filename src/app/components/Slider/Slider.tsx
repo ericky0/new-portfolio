@@ -8,52 +8,50 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 
+const slides = [
+  {
+    scale: '2',
+    name: 'firebase.png'
+  },
+  {
+    scale: '1.5',
+    name: 'git.png',
+  },
+  {
+    scale: '1.5',
+    name: 'javascript.png',
+  },
+  {
+    scale: '1',
+    name: 'mongo.png',
+  },
+  {
+    scale: '2',
+    name: 'nextjs.png',
+  },
+  {
+    scale: '1.5',
+    name: 'node.png',
+  },
+  {
+    scale: '1',
+    name: 'react.png',
+  },
+  {
+    scale: '2',
+    name: 'typescript.png',
+  },
+]
 
+const settings = {
+  slidesToShow: 7,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  arrows: false,
+}
 
 const Slider = () => {
-  
-  const slides = [
-    {
-      scale: '2',
-      name: 'firebase.png'
-    },
-    {
-      scale: '1.5',
-      name: 'git.png',
-    },
-    {
-      scale: '1.5',
-      name: 'javascript.png',
-    },
-    {
-      scale: '1',
-      name: 'mongo.png',
-    },
-    {
-      scale: '2',
-      name: 'nextjs.png',
-    },
-    {
-      scale: '1.5',
-      name: 'node.png',
-    },
-    {
-      scale: '1',
-      name: 'react.png',
-    },
-    {
-      scale: '2',
-      name: 'typescript.png',
-    },
-  ]
-
-  const settings = {
-      slidesToShow: 7,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      arrows: false,
-  }
 
   return (
     <div

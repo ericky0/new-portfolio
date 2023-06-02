@@ -10,10 +10,11 @@ interface TitleProps {
   title: string
   small?: boolean
   color?: boolean
+  animate?: boolean
 }
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-const Title = ({title, small, color}: TitleProps) => {
+const Title = ({title, small, color, animate}: TitleProps) => {
 
 
   const [originalTitle, setOriginalTitle] = useState(title)
@@ -44,7 +45,7 @@ const Title = ({title, small, color}: TitleProps) => {
 
   return (
   <h1 
-    onMouseEnter={startAnimation}
+    onMouseEnter={animate === true ? startAnimation : () => {}}
     className={`
       text-transparent
       bg-clip-text 
@@ -53,10 +54,11 @@ const Title = ({title, small, color}: TitleProps) => {
       leading-normal
       brightness-100
       hover:brightness-150
+      transition-all
       ${rubik.className}
       ${small ? 'text-3xl' : 'text-5xl'}
-      ${color ? 'from-pink-600' : 'from-stone-400'}
-      ${color ? 'to-zinc-800' : 'to-stone-800'}
+      ${color ? 'from-pink-600' : 'from-neutral-100'}
+      ${color ? 'to-neutral-300' : 'to-neutral-600'}
       `}>
       {originalTitle}
     </h1>

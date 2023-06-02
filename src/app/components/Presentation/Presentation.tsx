@@ -25,9 +25,9 @@ const Presentation = () => {
         <Image src='/images/eudnv.png' alt='my profile picture' className='absolute object-cover' fill/>
       </div>
       <p className='text-xl my-4 hover:brightness-125 transition-all'>Oi, eu sou o Erick 👋</p>
-      <Title title='DESENVOLVEDOR FULLSTACK' color/>
-      <Title title='CONSTRUINDO PRODUTOS DIGITAIS' color/>
-      <Title title='E EXPERIÊNCIAS ÚNICAS' color/>
+      <Title title='DESENVOLVEDOR FULLSTACK' color animate/>
+      <Title title='CONSTRUINDO PRODUTOS DIGITAIS' color animate/>
+      <Title title='E EXPERIÊNCIAS ÚNICAS' color animate/>
       <Button text='Ultimos Projetos' icon={ImArrowUpRight2} className='mt-12'/>
       
     </div>
