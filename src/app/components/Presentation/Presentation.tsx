@@ -5,8 +5,11 @@ import Button from '../Buttons/Button'
 import { ImArrowUpRight2 } from 'react-icons/im'
 
 const Presentation = () => {
+
+
+
   return (
-    <div className='flex flex-col items-center my-32 gap-4'>
+    <div className='flex flex-col items-center my-32 w-full break-keep'>
       <div className='
         w-40 
         h-40 
@@ -21,9 +24,12 @@ const Presentation = () => {
       '>
         <Image src='/images/eudnv.png' alt='my profile picture' className='absolute object-cover' fill/>
       </div>
-      <p className='text-xl'>Oi, eu sou o Erick 👋</p>
-      <Title title='Construção de produtos digitais, marcas e experiência.' color/>
-      <Button text='Ultimos Projetos' icon={ImArrowUpRight2} className='mt-8'/>
+      <p className='text-xl my-4 hover:brightness-125 transition-all'>Oi, eu sou o Erick 👋</p>
+      <Title title='DESENVOLVEDOR FULLSTACK' color/>
+      <Title title='CONSTRUINDO PRODUTOS DIGITAIS' color/>
+      <Title title='E EXPERIÊNCIAS ÚNICAS' color/>
+      <Button text='Ultimos Projetos' icon={ImArrowUpRight2} className='mt-12'/>
+      
     </div>
   )
 }
