@@ -9,8 +9,6 @@ import { ImArrowUpRight2 } from 'react-icons/im'
 
 const Presentation = () => {
 
-
-
   return (
     <div className='flex flex-col items-center my-32 w-full break-keep'>
       <div className='

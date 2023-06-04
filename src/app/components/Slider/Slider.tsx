@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import useWindowSize from '@/app/hooks/useWindowSize';
 import { useEffect, useState } from 'react';
+import { slides } from '@/app/data/Slides';
 
 
 
@@ -14,6 +15,8 @@ import { useEffect, useState } from 'react';
 
 
 const Slider = () => {
+
+  slides
 
   const windowSize = useWindowSize()
   let width = windowSize.width
@@ -39,41 +42,6 @@ const Slider = () => {
     autoplaySpeed: 2000,
     arrows: false,
   }
-
-  const slides = [
-    {
-      scale: '2',
-      name: 'firebase.png'
-    },
-    {
-      scale: '1.5',
-      name: 'git.png',
-    },
-    {
-      scale: '1.5',
-      name: 'javascript.png',
-    },
-    {
-      scale: '1',
-      name: 'mongo.png',
-    },
-    {
-      scale: '2',
-      name: 'nextjs.png',
-    },
-    {
-      scale: '1.5',
-      name: 'node.png',
-    },
-    {
-      scale: '1',
-      name: 'react.png',
-    },
-    {
-      scale: '2',
-      name: 'typescript.png',
-    },
-  ]
 
   return (
     <div

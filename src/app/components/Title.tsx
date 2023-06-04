@@ -36,8 +36,6 @@ const Title = ({title, small, color, animate}: TitleProps) => {
 
       iterations += 1 / 2
     }, 30)
-
-    
   }
 
   return (
@@ -48,15 +46,12 @@ const Title = ({title, small, color, animate}: TitleProps) => {
         bg-clip-text 
         bg-gradient-to-r
         text-center
-        leading-normal
         brightness-100
         hover:brightness-150
         transition-all
-        lg:text-5xl
-        md:text-4xl
-        text-2xl
+        pt-2
         ${rubik.className}
-        ${small && 'text-3xl md:text-3xl lg:text-3xl'}
+        ${small ? 'text-3xl md:text-3xl lg:text-3xl' : 'lg:text-5xl md:text-4xl text-2xl'}
         ${color ? 'from-pink-600' : 'from-neutral-100'}
         ${color ? 'to-neutral-300' : 'to-neutral-600'}
         `}>
