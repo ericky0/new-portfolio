@@ -10,6 +10,9 @@ module.exports = {
       backgroundImage: {
         'background-texture': "url('/images/background-texture.svg')"
       },
+      scale: {
+        '200': '2'
+      }
     },
   },
   plugins: [],

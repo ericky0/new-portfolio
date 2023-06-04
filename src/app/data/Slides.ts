@@ -16,11 +16,11 @@ export const slides = [
     name: 'mongo.png',
   },
   {
-    scale: 2,
+    scale: 1.5,
     name: 'nextjs.png',
   },
   {
-    scale: 1.5,
+    scale: 1,
     name: 'node.png',
   },
   {

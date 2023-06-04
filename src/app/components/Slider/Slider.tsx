@@ -23,6 +23,8 @@ const Slider = () => {
   
   const [amountSlides, setAmountSlides] = useState(0)
 
+  const [renderedSlides, setRenderedSlides] = useState<any>()
+
   useEffect(() => {
     if (width) {
       if (width >= 1536) {
@@ -35,11 +37,31 @@ const Slider = () => {
     }
   }, [width])
 
+  useEffect(() => {
+    slides
+
+    const renderSlides = () => {
+      return slides.map((slide) => (
+        <div key={slide.name} className='
+          min-w-[186px]
+          h-11 
+          relative 
+          shrink-0
+        '>
+          <Image src={`/images/technologies/${slide.name}`} alt='slide' fill className={`absolute object-contain pointer-events-none scale-[${slide.scale}]`}/>
+        </div>
+      ))
+    }
+
+    setRenderedSlides(renderSlides())
+
+  }, [])
+
   const settings = {
     slidesToShow: amountSlides,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 500,
     arrows: false,
   }
 
@@ -54,16 +76,7 @@ const Slider = () => {
         border-neutral-800 
     '>
       <SlickSlider {...settings} className='overflow-hidden'>
-        {slides.map((slide) => (
-          <div key={slide.name} className='
-            min-w-[186px]
-            h-11 
-            relative 
-            shrink-0
-          '>
-            <Image src={`/images/technologies/${slide.name}`} alt='slide' fill className={`absolute object-contain pointer-events-none scale-[${slide.scale}] `}/>
-          </div>
-        ))}
+        {renderedSlides}
       </SlickSlider>
     </div>
   )
