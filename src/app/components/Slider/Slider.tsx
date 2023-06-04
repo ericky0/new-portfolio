@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import Image from 'next/image'
@@ -7,7 +8,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import useWindowSize from '@/app/hooks/useWindowSize';
 import { useEffect, useState } from 'react';
-import { slides } from '@/app/data/Slides';
+import { slides as myslides } from '@/app/data/Slides';
 
 
 
@@ -16,52 +17,32 @@ import { slides } from '@/app/data/Slides';
 
 const Slider = () => {
 
-  slides
+  myslides
 
   const windowSize = useWindowSize()
   let width = windowSize.width
   
-  const [amountSlides, setAmountSlides] = useState(0)
 
-  const [renderedSlides, setRenderedSlides] = useState<any>()
+  const [amountSlides, setAmountSlides] = useState(0)
+  const [slides, setSlides] = useState(myslides)
 
   useEffect(() => {
     if (width) {
       if (width >= 1536) {
-        setAmountSlides(4)
+        setAmountSlides(6)
       } else if (width >= 1024) {
-        setAmountSlides(3)
+        setAmountSlides(4)
       } else if (width >= 768) {
-        setAmountSlides(2)
+        setAmountSlides(3)
       }
     }
   }, [width])
-
-  useEffect(() => {
-    slides
-
-    const renderSlides = () => {
-      return slides.map((slide) => (
-        <div key={slide.name} className='
-          min-w-[186px]
-          h-11 
-          relative 
-          shrink-0
-        '>
-          <Image src={`/images/technologies/${slide.name}`} alt='slide' fill className={`absolute object-contain pointer-events-none scale-[${slide.scale}]`}/>
-        </div>
-      ))
-    }
-
-    setRenderedSlides(renderSlides())
-
-  }, [])
 
   const settings = {
     slidesToShow: amountSlides,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 500,
+    autoplaySpeed: 2000,
     arrows: false,
   }
 
@@ -76,7 +57,14 @@ const Slider = () => {
         border-neutral-800 
     '>
       <SlickSlider {...settings} className='overflow-hidden'>
-        {renderedSlides}
+        {slides.map((slide) => (
+          <div key={slide.name} className='
+            min-w-[186px]
+            h-16
+          '> 
+            <img alt='slide' src={`https://cdn.simpleicons.org/${slide.name}/gray`} className='m-auto pointer-events-none h-[100%]'/>
+          </div>
+        ))}
       </SlickSlider>
     </div>
   )
