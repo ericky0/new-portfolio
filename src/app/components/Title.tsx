@@ -16,9 +16,6 @@ const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 const Title = ({title, small, color, animate}: TitleProps) => {
 
-
-  const [originalTitle, setOriginalTitle] = useState(title)
-
   const startAnimation = (e: MouseEvent) => {
     const target = e.target as HTMLHeadingElement
 
@@ -27,7 +24,7 @@ const Title = ({title, small, color, animate}: TitleProps) => {
     const interval = setInterval(() => {
       target.innerText = target.innerText.split('')
       .map((letter, index) => {
-        if (index < iterations) {
+        if (letter === ' ' || index < iterations) {
           return title[index]
         }
 
@@ -44,24 +41,27 @@ const Title = ({title, small, color, animate}: TitleProps) => {
   }
 
   return (
-  <h1 
-    onMouseEnter={animate === true ? startAnimation : () => {}}
-    className={`
-      text-transparent
-      bg-clip-text 
-      bg-gradient-to-r
-      text-center
-      leading-normal
-      brightness-100
-      hover:brightness-150
-      transition-all
-      ${rubik.className}
-      ${small ? 'text-3xl' : 'text-5xl'}
-      ${color ? 'from-pink-600' : 'from-neutral-100'}
-      ${color ? 'to-neutral-300' : 'to-neutral-600'}
-      `}>
-      {originalTitle}
-    </h1>
+    <h1 
+      onMouseEnter={animate === true ? startAnimation : () => {}}
+      className={`
+        text-transparent
+        bg-clip-text 
+        bg-gradient-to-r
+        text-center
+        leading-normal
+        brightness-100
+        hover:brightness-150
+        transition-all
+        lg:text-5xl
+        md:text-4xl
+        text-2xl
+        ${rubik.className}
+        ${small && 'text-3xl md:text-3xl lg:text-3xl'}
+        ${color ? 'from-pink-600' : 'from-neutral-100'}
+        ${color ? 'to-neutral-300' : 'to-neutral-600'}
+        `}>
+        {title}
+      </h1>
   )
 }
 

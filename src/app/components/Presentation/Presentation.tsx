@@ -1,7 +1,10 @@
+'use client'
+
 import React from 'react'
 import Image from 'next/image'
 import Title from '../Title'
 import Button from '../Buttons/Button'
+import { Link as ButtonLink } from 'react-scroll'
 import { ImArrowUpRight2 } from 'react-icons/im'
 
 const Presentation = () => {
@@ -28,7 +31,9 @@ const Presentation = () => {
       <Title title='DESENVOLVEDOR FULLSTACK' color animate/>
       <Title title='CONSTRUINDO PRODUTOS DIGITAIS' color animate/>
       <Title title='E EXPERIÊNCIAS ÚNICAS' color animate/>
-      <Button text='Ultimos Projetos' icon={ImArrowUpRight2} className='mt-12'/>
+      <ButtonLink to='projects' smooth={true} duration={800} offset={-300}>
+        <Button text='Ultimos Projetos' icon={ImArrowUpRight2} className='mt-12'/>
+      </ButtonLink>
       
     </div>
   )

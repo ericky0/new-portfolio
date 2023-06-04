@@ -1,15 +1,20 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import Image from 'next/image'
 import React from 'react'
 
+interface CardProps {
+  title: string
+  img: string
+  desc: string
+}
 
-const Card = () => {
+
+const Card = ({ title, img, desc }: CardProps) => {
 
 return (
     <div className='
-      flex 
+      flex
       flex-col 
       gap-4
       max-w-[14rem] 
@@ -26,10 +31,11 @@ return (
         rounded-md
         '>
         <Image 
-          src='/images/myskills/node.jpg' 
+          src={img} 
           fill 
           className='absolute object-cover' 
           alt='skill'
+          sizes='100vw'
         />
       </div>
       <p className='
@@ -37,7 +43,7 @@ return (
         text-lg
         text-neutral-200
       '>
-        NodeJS Developer
+        {title}
       </p>
         <p className='
             font-light 
@@ -45,7 +51,7 @@ return (
             break-words
             text-neutral-400
           '>
-          Sou especialista no desenvolvimento de aplicações web escaláveis e de alto desempenho. Sou hábil em criar soluções que sejam eficientes e confiáveis.
+          {desc}
         </p>
     </div>
   )

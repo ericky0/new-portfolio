@@ -1,22 +1,10 @@
+import { social } from '@/app/data/Social'
 import React from 'react'
 import { AiOutlineMail } from 'react-icons/ai'
 
 const Navbar = () => {
 
-  const social = [
-    {
-      name: 'Linkedin',
-      link: ''
-    }, 
-    {
-      name: 'Github',
-      link: ''
-    },
-    { 
-      name: 'Twitter',
-      link: ''
-    }
-  ]
+  social
   
   return (
     <nav
@@ -48,13 +36,13 @@ const Navbar = () => {
         '>
           <AiOutlineMail size={20}/>
         </div>
-        <a href='#' className='font-light group-hover:text-slate-100 transition-all'>
+        <a href='mailto:erickkhogarth@gmail.com?subject=Oi%20Erick!%20&body=Digite%20o%20assunto%20a%20ser%20discutido%20aqui' className='font-light group-hover:text-slate-100 transition-all'>
           Entre em contato
         </a>
       </div>
       <div className='flex gap-6'>
         {social.map((social) => (
-          <a href={social.link} className='font-light hover:text-slate-100 transition-all' key={social.name}>
+          <a href={social.link} target='_blank' className='font-light hover:text-slate-100 transition-all' key={social.name}>
             {social.name}
           </a>
         ))}
